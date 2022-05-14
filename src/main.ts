@@ -26,7 +26,7 @@ async function createApp() {
 	const router = createRouter();
 	const session = initUserSession();
 	const storage = initStorage();
-	const api = initApi(session);
+	const api = initApi(session, i18n.global.locale);
 
 	if (session.isLoggedIn) {
         // there you should fetch user to check
@@ -82,10 +82,12 @@ async function createApp() {
 		}
 	})
 
-    // global components injections 
-	Multiselect.noOptionsText.default = i18n.global.t('multiselect.noOptions');
-	Multiselect.noResultsText.default = i18n.global.t('multiselect.noResults');
+	// @ts-expect-error
+	Multiselect.props.noOptionsText.default = i18n.global.t('multiselect.noOptions');
+	// @ts-expect-error
+	Multiselect.props.noResultsText.default = i18n.global.t('multiselect.noResults');
 
+	// global components injections
 	app.component('Multiselect', Multiselect)
 
     // packages use

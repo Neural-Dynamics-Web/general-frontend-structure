@@ -22,8 +22,11 @@
     "types": [
       "node",
       "axios",
+      "nprogress",
       "vite/client",
-      "@intlify/vite-plugin-vue-i18n/client"
+      "@intlify/vite-plugin-vue-i18n/client",
+      "vite-plugin-vue-layouts/client",
+      "vite-plugin-pages/client"
     ]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

@@ -3,6 +3,7 @@ import Vue from '@vitejs/plugin-vue'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
+import Layouts from 'vite-plugin-vue-layouts'
 import SvgLoader from 'vite-svg-loader'
 import path from 'path'
 
@@ -62,6 +63,11 @@ export default defineConfig({
         }
         return route
       }
+    }),
+
+    Layouts({
+      layoutsDirs: 'src/layouts',
+      defaultLayout: 'default'
     }),
 
     Components({

@@ -2,9 +2,11 @@ import {
     createRouter as createClientRouter,
     createWebHistory,
 } from 'vue-router'
-import * as NProgress from 'nprogress'
-import routes from 'pages-generated'
+import NProgress from 'nprogress'
+import generatedRoutes from 'virtual:generated-pages'
+import { setupLayouts } from 'virtual:generated-layouts'
 
+const routes = setupLayouts(generatedRoutes)
 
 export function createRouter() {
     const router = createClientRouter({
