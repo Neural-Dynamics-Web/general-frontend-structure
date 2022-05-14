@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+.pnpm-store
+.vscode
+.idea
+.env
+.DS_Store
+dist
+dist-ssr
+*.local
+components.d.ts

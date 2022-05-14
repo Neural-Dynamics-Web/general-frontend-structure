@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "lib": ["esnext", "dom"],
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "/~/*": ["./src/assets/*"],
+      "/@src/*": ["./src/*"]
+    },
+    "typeRoots":["./src/types"],
+    "types": [
+      "node",
+      "axios",
+      "vite/client",
+      "@intlify/vite-plugin-vue-i18n/client"
+    ]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+}

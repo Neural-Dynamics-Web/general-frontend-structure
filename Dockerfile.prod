@@ -1,0 +1,28 @@
+FROM node:14-alpine AS Builder
+
+WORKDIR /usr/src/app/
+
+LABEL stage=builder
+
+ARG BACKEND_DOMAIN
+
+ENV VITE_API_ROOT=https://${BACKEND_DOMAIN}
+
+RUN apk add --no-cache build-base gcc autoconf automake libtool zlib-dev libpng-dev nasm
+
+COPY package.json ./
+
+RUN npm install && npm audit fix
+
+COPY . .
+
+ENV NODE_PATH=/usr/src/app/node_modules
+RUN npm run build
+
+
+FROM jonasal/nginx-certbot:3.0.0-nginx1.21.3 AS Runtime
+
+LABEL stage=runtime
+LABEL org.opencontainers.image.source https://github.com/neural-dynamics-web/bycomment-front
+
+COPY --from=Builder --chown=nginx:nginx /usr/src/app/dist /app/dist

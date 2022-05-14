@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  front:
+    container_name: template-front
+    working_dir: /usr/src/app/
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: pnpm run dev
+    volumes:
+      - .:/usr/src/app/:delegated
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - VITE_API_ROOT=https://${VITE_API_ROOT}
