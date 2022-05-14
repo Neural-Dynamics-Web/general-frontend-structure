@@ -83,10 +83,10 @@ async function createApp() {
 	})
 
     // global components injections 
-	Multiselect.props.noOptionsText.default = i18n.global.t('multiselect.noOptions');
-	Multiselect.props.noResultsText.default = i18n.global.t('multiselect.noResults');
+	Multiselect.noOptionsText.default = i18n.global.t('multiselect.noOptions');
+	Multiselect.noResultsText.default = i18n.global.t('multiselect.noResults');
 
-	app.component(Multiselect.name, Multiselect)
+	app.component('Multiselect', Multiselect)
 
     // packages use
 	app.use(router)

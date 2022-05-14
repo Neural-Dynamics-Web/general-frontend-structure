@@ -1,7 +1,5 @@
 import moment from 'moment'
-import 'moment/src/locale/ru'
-
-moment.locale('ru')
+// https://momentjs.com/docs/#/i18n/
 
 export default function formatDate(value:string | Date) {
     if (value) {
