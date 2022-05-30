@@ -10,7 +10,7 @@ import {
 import { createI18n } from './i18n'
 import { RouterView } from 'vue-router'
 import { createRouter } from './router'
-import Multiselect from "@vueform/multiselect";
+import Multiselect from "multiselect";
 import useNotyf from '/@src/composable/useNotyf'
 
 import {

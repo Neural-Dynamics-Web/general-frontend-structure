@@ -3,17 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
-    "serve": "vite preview --host"
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview --host",
+    "test-ts": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@intlify/vite-plugin-vue-i18n": "^3.2.1",
-    "@vueform/multiselect": "^2.3.1",
     "@vueuse/core": "^7.0.1",
     "@vueuse/head": "^0.7.2",
     "@vueuse/router": "^7.5.3",
     "axios": "0.27.2",
     "moment": "^2.29.1",
+    "multiselect": "github:Neural-Dynamics-Web/multiselect.git#dd5e722",
     "notyf": "^3.10.0",
     "nprogress": "^0.2.0",
     "vue": "^3.2.16",

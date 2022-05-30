@@ -20,11 +20,12 @@
     },
     "typeRoots":["./src/types"],
     "types": [
+      "@intlify/vite-plugin-vue-i18n/client",
       "node",
       "axios",
+      "multiselect",
       "nprogress",
       "vite/client",
-      "@intlify/vite-plugin-vue-i18n/client",
       "vite-plugin-vue-layouts/client",
       "vite-plugin-pages/client"
     ]
