@@ -1,4 +1,4 @@
-import { InjectionKey, ref, computed, inject, reactive, ReactiveEffect } from 'vue'
+import { InjectionKey, ref, computed, inject, reactive } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 
@@ -10,10 +10,10 @@ export interface UserData {
 }
 
 export interface AuthApiData {
-  user_session: UserSessionData,
+  user_session: SessionData,
 }
 
-export interface UserSessionData {
+export interface SessionData {
   refresh_token: string,
   access_token: string,
   access_token_timestamp: number | null,
@@ -21,10 +21,10 @@ export interface UserSessionData {
   isLoggedIn: boolean,
 }
 
-export const userSessionSymbol: InjectionKey<UserSessionData> = Symbol()
+export const sessionSymbol: InjectionKey<SessionData> = Symbol()
 
 
-export function initUserSession(): UserSessionData {
+export function initSession(): SessionData {
   const refresh_token = useStorage('refresh_token', '')
   const access_token = useStorage('access_token', '')
   const access_token_timestamp = useStorage<number>('access_token_timestamp', null)
@@ -40,10 +40,10 @@ export function initUserSession(): UserSessionData {
   })
 }
 
-export function useUserSession() {
-  const userSession = inject(userSessionSymbol)
-  if (!userSession) {
-    throw new Error('UserSession not properly injected in app')
+export function useSession() {
+  const session = inject(sessionSymbol)
+  if (!session) {
+    throw new Error('Session not properly injected in app')
   }
-  return userSession
+  return session
 }

@@ -2,7 +2,7 @@ import { InjectionKey, inject } from 'vue'
 import axios, { Axios } from 'axios'
 
 import useNotyf from './useNotyf'
-import { UserSessionData } from './useUserAPI'
+import { SessionData } from './useSession'
 
 
 export const apiSymbol: InjectionKey<Axios> = Symbol()
@@ -10,9 +10,9 @@ export const API_ROOT = import.meta.env.VITE_API_ROOT
 const notyf = useNotyf()
 
 
-export function initApi(session: UserSessionData, locale: string) {
+export function initApi(session: SessionData, locale: string) {
   const api = axios.create({
-    baseURL: `${API_ROOT}/api/frontend/`,
+    baseURL: `${API_ROOT}/api/`,
     headers: {
       'Accept-Language': locale
     }
