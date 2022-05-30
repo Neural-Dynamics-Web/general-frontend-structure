@@ -3,7 +3,7 @@
 </template>
 
 <style lang="scss">
-.input{
+.input {
     border: 1px solid grey;
 }
 </style>

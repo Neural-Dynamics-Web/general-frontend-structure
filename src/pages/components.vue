@@ -1,5 +1,5 @@
 <template>
-    <div>
-        <VInput/>
-    </div>
+  <div>
+    <VInput />
+  </div>
 </template>

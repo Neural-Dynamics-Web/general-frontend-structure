@@ -47,15 +47,15 @@ const notyf = new Notyf({
 export default function useNotyf() {
   return {
     success: (message: string, duration?: number | null) => {
-      notyf.success({ 
+      notyf.success({
         message,
-        duration: duration || defaultDuration 
+        duration: duration || defaultDuration
       })
     },
     error: (message: string, duration?: number | null) => {
-      notyf.error({ 
+      notyf.error({
         message,
-        duration: duration || defaultDuration 
+        duration: duration || defaultDuration
       })
     },
     info: (message: string, duration?: number | null) => {

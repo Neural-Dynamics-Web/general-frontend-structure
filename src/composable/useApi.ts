@@ -10,7 +10,7 @@ export const API_ROOT = import.meta.env.VITE_API_ROOT
 const notyf = useNotyf()
 
 
-export function initApi(session: UserSessionData, locale:string) {
+export function initApi(session: UserSessionData, locale: string) {
   const api = axios.create({
     baseURL: `${API_ROOT}/api/frontend/`,
     headers: {
