@@ -1,0 +1,26 @@
+{
+  "Vue 3 Props": {
+    "scope": "vue",
+    "prefix": ["script setup", "<script setup"],
+    "description": "Vue 3 component with typed props",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import type { ref, PropType } from 'vue'",
+      "",
+      "const props = defineProps({",
+      "  modelValue: {",
+      "    type: Object as PropType<User>,",
+      "    required: true,",
+      "  },",
+      "})",
+      "",
+      "</script>",
+      "",
+      "<template>",
+      "</template>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "</style>"
+    ]
+  }
+}

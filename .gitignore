@@ -104,7 +104,6 @@ dist
 .tern-port
 
 .pnpm-store
-.vscode
 .idea
 .env
 .DS_Store
