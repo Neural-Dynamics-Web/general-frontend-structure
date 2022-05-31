@@ -1,12 +1,19 @@
 <template>
-  <main >
-    <RouterView v-slot="{ Component }">
-      <transition name="fade-fast" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </RouterView>
-    <div>
-      [Default Layout]
-    </div>
-  </main>
+  <div>
+    <main>
+      <RouterView v-slot="{ Component }">
+        <transition name="fade-fast" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
+    </main>
+    <Footer/>
+  </div>
 </template>
+
+<style>
+main {
+  padding: 30px;
+  min-height: 90vh;
+}
+</style>
