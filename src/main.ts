@@ -98,5 +98,4 @@ async function createApp() {
 }
 
 
-const app = await createApp()
-app.mount('#app')
+createApp().then((app) => app.mount("#app"));
