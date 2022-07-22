@@ -6,23 +6,25 @@ LABEL stage=builder
 
 ARG BACKEND_DOMAIN
 
-ENV VITE_API_ROOT=https://${BACKEND_DOMAIN}
+ENV VITE_API_ROOT=${BACKEND_DOMAIN}
 
 RUN apk add --no-cache build-base gcc autoconf automake libtool zlib-dev libpng-dev nasm
+RUN npm install -g pnpm
 
-COPY package.json ./
+COPY package.json pnpm-lock.yaml ./
 
-RUN npm install && npm audit fix
+RUN pnpm config set auto-install-peers true && \
+    pnpm config set shamefully-hoist true && \
+    pnpm install
 
 COPY . .
 
-ENV NODE_PATH=/usr/src/app/node_modules
-RUN npm run build
+RUN pnpm build
 
 
 FROM jonasal/nginx-certbot:3.0.0-nginx1.21.3 AS Runtime
 
 LABEL stage=runtime
-LABEL org.opencontainers.image.source https://github.com/neural-dynamics-web/bycomment-front
+LABEL org.opencontainers.image.source https://github.com/Neural-Dynamics-Web/front
 
 COPY --from=Builder --chown=nginx:nginx /usr/src/app/dist /app/dist
