@@ -17,6 +17,7 @@ import { createPinia } from "pinia";
 import { initSession, sessionSymbol } from "./composable/useSession";
 import { initApi, apiSymbol } from "/@src/composable/useApi";
 import { initStorage, storageSymbol } from "/@src/composable/useStorage";
+import { registerSW } from "virtual:pwa-register";
 
 async function createApp() {
   const i18n = createI18n();
@@ -94,6 +95,11 @@ async function createApp() {
   app.use(pinia);
   app.use(router);
   app.use(i18n);
+
+  const updateSW = registerSW({
+    onNeedRefresh() {},
+    onOfflineReady() {},
+  });
 
   return app;
 }
