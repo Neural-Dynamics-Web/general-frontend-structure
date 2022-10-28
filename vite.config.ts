@@ -86,8 +86,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.png", "robots.txt"],
       manifest: {
-        name: "Tucker",
-        short_name: "Tucker",
+        name: "Name",
+        short_name: "ShortName",
         start_url: "/?utm_source=pwa",
         display: "standalone",
         theme_color: "#e5fe40",

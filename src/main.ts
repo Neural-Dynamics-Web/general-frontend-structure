@@ -17,7 +17,9 @@ import { createPinia } from "pinia";
 import { initSession, sessionSymbol } from "./composable/useSession";
 import { initApi, apiSymbol } from "/@src/composable/useApi";
 import { initStorage, storageSymbol } from "/@src/composable/useStorage";
+
 import { registerSW } from "virtual:pwa-register";
+// import { registerSW } from "/@src/../node_modules/vite-plugin-pwa";
 
 async function createApp() {
   const i18n = createI18n();
