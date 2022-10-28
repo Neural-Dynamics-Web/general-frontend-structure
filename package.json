@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "serve": "vite preview --host",
     "test-ts": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^3.2.1",
+    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
     "@vueuse/core": "^7.0.1",
     "@vueuse/head": "^0.7.2",
     "@vueuse/router": "^7.5.3",
@@ -17,8 +17,9 @@
     "multiselect": "github:Neural-Dynamics-Web/multiselect.git#dd5e722",
     "notyf": "^3.10.0",
     "nprogress": "^0.2.0",
+    "pinia": "2.0.22",
     "vue": "^3.2.16",
-    "vue-i18n": "^9.2.0-beta.20",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
@@ -27,12 +28,14 @@
     "@types/nprogress": "0.2.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "sass": "^1.49.0",
-    "typescript": "^4.4.3",
+    "typescript": "4.8.3",
     "unplugin-vue-components": "^0.14.13",
     "vite": "^2.6.4",
     "vite-plugin-pages": "^0.18.0",
+    "vite-plugin-pwa": "0.11.2",
     "vite-plugin-vue-layouts": "0.6.0",
     "vite-svg-loader": "^2.2.0",
-    "vue-tsc": "^0.3.0"
+    "vue-tsc": "0.40.5",
+    "workbox-window": "^6.5.4"
   }
 }
