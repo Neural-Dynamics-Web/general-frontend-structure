@@ -8,7 +8,7 @@
     "test-ts": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@intlify/vite-plugin-vue-i18n": "^3.2.1",
+    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
     "@vueuse/core": "^7.0.1",
     "@vueuse/head": "^0.7.2",
     "@vueuse/router": "^7.5.3",
@@ -18,7 +18,7 @@
     "notyf": "^3.10.0",
     "nprogress": "^0.2.0",
     "vue": "^3.2.16",
-    "vue-i18n": "^9.2.0-beta.20",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.0.12",
     "pinia": "2.0.22"
   },
