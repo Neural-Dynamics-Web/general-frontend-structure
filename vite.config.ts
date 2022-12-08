@@ -84,7 +84,7 @@ export default defineConfig({
     VitePWA({
       base: "/",
       registerType: "autoUpdate",
-      includeAssets: ["favicon.png", "robots.txt"],
+      includeAssets: ["favicon.ico", "robots.txt"],
       manifest: {
         name: "Name",
         short_name: "ShortName",
