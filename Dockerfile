@@ -4,7 +4,8 @@ RUN npm install -g pnpm
 
 WORKDIR /usr/src/
 COPY package.json ./
-RUN pnpm install
+RUN pnpm config set auto-install-peers true && \
+    pnpm install
 ENV PATH=/usr/src/node_modules/.bin:$PATH
 
 WORKDIR /usr/src/app/
